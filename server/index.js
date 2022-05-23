@@ -20,6 +20,7 @@ app.get("/repeat/:repeat", (req, res) => {
 
 app.get("/query-test", (req, res) => {
   const { query = {} } = req;
+  console.log(req);
   let queryArr = Object.entries(query);
   if (!queryArr.length) res.send("You sent an empty query!");
   if (queryArr.length === 1) {

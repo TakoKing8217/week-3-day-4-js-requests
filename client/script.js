@@ -131,12 +131,16 @@ repeatBtn.addEventListener("click", repeatMyParam);
 // CODE HERE
 const queryTest = () => {
   axios
-    .get(
-      "http://localhost:3000/repeat?myquery=a-really-awesome-query&anotherOne=DJ-Khalid"
-    )
-    .then((data) => console.log(data))
-    .check((err) => console.log(err));
+    .get("http://localhost:3000/query-test?marco=macro")
+    .then((data) => console.log(data.data))
+    .catch((err) => console.log(err));
 };
+
+// console.log(
+//   new URL(
+//     "http://localhost:3000/query-test?myquery=a-really-awesome-query&anotherOne=DJ-Khalid"
+//   )
+// );
 
 const confused = document.querySelector("#query-button");
 confused.addEventListener("click", queryTest);
